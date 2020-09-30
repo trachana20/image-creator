@@ -1,11 +1,8 @@
 <template>
-    <!-- <h1>Editor</h1> -->
-    <!-- <div>
-        abhishek
-    </div> -->
+    
     <div>
       <v-stage
-        style="width:400px; height:400px; border: 2px solid #000000;"
+        style="width:400px; height:400px; border: 2px solid #000000;"//sets black color border of 2px.
         ref="stage"
         :config="stageSize"
         @mousedown="handleStageMouseDown"
@@ -24,7 +21,7 @@
 </template>
 
 <script>
-//  console.log(images);
+
 export default {
     name: 'Editor',
     props: ['images', 'index'],
@@ -38,7 +35,7 @@ export default {
       editIndex: this.index,
       selectedShapeName: "",
       editImages: [],
-    //   name: String((this.images[this.editIndex]).split('o/')[1].split('.')[0]),
+    
       }
   },
   methods: {
@@ -46,7 +43,7 @@ export default {
     handleTransformEnd(e) {
       const name = String((this.images[this.editIndex].url).split('o/')[1].split('.')[0]);
       const rect = this.images.find((r) => r.name === name);
-    //   console.log("rect=>");
+    
       rect.x = e.target.x();
       rect.y = e.target.y();
       rect.rotation = e.target.rotation();
@@ -69,7 +66,7 @@ export default {
 
       const name = String((this.images[this.editIndex].url).split('o/')[1].split('.')[0]);
       const rect = this.images.find((r) => r.name === name);
-    //   console.log(rect);
+    
       if (rect) {
         this.selectedShapeName = name;
       } else {
@@ -125,9 +122,7 @@ export default {
        this.image.src = this.images[this.editIndex].url;
       }
   },
-//   mounted() {
-//     this.image.src = this.images[this.editIndex];
-// }
+
 }
 </script>
 
